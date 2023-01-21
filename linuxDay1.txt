@@ -1,0 +1,59 @@
+
+91965@DESKTOP-319P3IA MINGW64 ~/Desktop/project
+$ vagrant status
+Current machine states:
+
+default                   running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.
+
+91965@DESKTOP-319P3IA MINGW64 ~/Desktop/project
+$ ssh
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command [argument ...]]
+
+91965@DESKTOP-319P3IA MINGW64 ~/Desktop/project
+$ vagrant ssh
+Last login: Sat Jan 21 11:25:49 2023 from 10.0.2.2
+[vagrant@rhel9 ~]$ cd /
+[vagrant@rhel9 /]$ sudo -su
+sudo: option requires an argument -- 'u'
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] [VAR=value]
+            [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] file ...
+[vagrant@rhel9 /]$ whoami
+vagrant
+[vagrant@rhel9 /]$ cd / sudo -su
+-bash: cd: too many arguments
+[vagrant@rhel9 /]$ sudo su -
+Last login: Sat Jan 21 11:33:58 UTC 2023 on pts/0
+[root@rhel9 ~]# whoami
+root
+[root@rhel9 ~]# cd /
+[root@rhel9 /]# pwd
+/
+[root@rhel9 /]# cd #root
+[root@rhel9 ~]# pwd
+/root
+[root@rhel9 ~]# whoami
+root
+[root@rhel9 ~]# ls
+[root@rhel9 ~]# cd /
+[root@rhel9 /]# ls
+afs  bin  boot  dev  etc  {file1..file10}  home  lib  lib64  manuu  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  uchiha  usr  var
+[root@rhel9 /]# pwd
+/
+[root@rhel9 /]# exit
+logout
+[vagrant@rhel9 /]$
